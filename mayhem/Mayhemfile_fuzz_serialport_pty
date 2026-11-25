@@ -1,0 +1,11 @@
+project: savantenvs/CSerialPort
+target: fuzz_serialport_pty
+
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_serialport_pty/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_serialport_pty
+    libfuzzer: true
+    timeout: 5
